@@ -1,19 +1,24 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+// src/Routes/Detail.jsx
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ContextGlobal } from "../Components/utils/ContextGlobal";
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const { id } = useParams();
+  const { state } = useContext(ContextGlobal);
+  const dentist = state.data.find((dentist) => dentist.id === parseInt(id));
 
-  return (
-    <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
-  )
-}
+  return dentist ? (
+    <div>
+      <h1>Detail Dentist {id}</h1>
+      <p>Name: {dentist.name}</p>
+      <p>Email: {dentist.email}</p>
+      <p>Phone: {dentist.phone}</p>
+      <p>Website: {dentist.website}</p>
+    </div>
+  ) : (
+    <p>Dentist not found</p>
+  );
+};
 
-export default Detail
+export default Detail;

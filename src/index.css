@@ -120,3 +120,38 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.card-img {
+  width: 100px; /* Ajusta este tamaño según lo necesites */
+  height: 100px; /* Mantén proporción */
+  object-fit: cover; /* Recorta la imagen para que encaje en el espacio sin deformarse */
+  border-radius: 50%; /* Hace que las imágenes tengan forma circular */
+  margin-bottom: 1rem; /* Espacio debajo de la imagen */
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.footer-logo {
+  height: 40px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-icon {
+  width: 30px;
+  cursor: pointer;
+}
+
+.footer-icon:hover {
+  opacity: 0.8;
+}

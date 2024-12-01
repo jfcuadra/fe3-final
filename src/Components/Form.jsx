@@ -1,14 +1,40 @@
-import React from "react";
-
+// src/Components/Form.jsx
+import React, { useState } from "react";
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
+  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validaciones
+    if (formData.name.trim().length > 5 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setError(false);
+      alert(`Gracias ${formData.name}, te contactaremos cuando antes vía mail`);
+      console.log("Form data:", formData);
+    } else {
+      setError(true);
+    }
+  };
 
   return (
-    <div>
-      <form>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Name (min 6 chars)"
+        value={formData.name}
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      />
+      <button type="submit">Submit</button>
+      {error && <p style={{ color: "red" }}>Por favor verifique su información nuevamente</p>}
+    </form>
   );
 };
 
