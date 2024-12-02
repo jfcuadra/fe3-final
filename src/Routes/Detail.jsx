@@ -10,7 +10,7 @@ const Detail = () => {
 
   return dentist ? (
     <div>
-      <h1>Detail Dentist {id}</h1>
+      <h1>Detalles Dentista {id}</h1>
       <p>Name: {dentist.name}</p>
       <p>Email: {dentist.email}</p>
       <p>Phone: {dentist.phone}</p>

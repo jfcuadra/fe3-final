@@ -22,7 +22,7 @@ const Form = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Name (min 6 chars)"
+        placeholder="Nombre (min 6 caracteres)"
         value={formData.name}
         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
       />
@@ -32,7 +32,7 @@ const Form = () => {
         value={formData.email}
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
       />
-      <button type="submit">Submit</button>
+      <button type="submit">Enviar</button>
       {error && <p style={{ color: "red" }}>Por favor verifique su información nuevamente</p>}
     </form>
   );
