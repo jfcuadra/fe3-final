@@ -16,9 +16,11 @@ const Navbar = () => {
   return (
     <nav className={state.theme}>
       <Link to="/">Home</Link>
-      <Link to="/favs">Favs</Link>
-      <Link to="/contact">Contact</Link>
-      <button onClick={toggleTheme}>Change theme</button>
+      <Link to="/favs">Favoritos</Link>
+      <Link to="/contact">Contactos</Link>
+      <button onClick={toggleTheme}>
+        {state.theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      </button>
     </nav>
   );
 };

@@ -9,6 +9,7 @@ import Favs from "./Routes/Favs";
 import { ContextProvider } from "./Components/utils/ContextGlobal";
 
 function App() {
+ 
   return (
     <ContextProvider>
       <Router>
