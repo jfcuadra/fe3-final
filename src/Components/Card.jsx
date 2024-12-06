@@ -7,9 +7,9 @@ const Card = ({ name, username, id }) => {
     if (!favs.some((fav) => fav.id === id)) {
       favs.push({ name, username, id });
       localStorage.setItem("favs", JSON.stringify(favs));
-      alert("Added to favorites!");
+      alert("Agregado a Favoritos!");
     } else {
-      alert("Already in favorites!");
+      alert("Elemento en Favoritos!");
     }
   };
 
@@ -18,8 +18,8 @@ const Card = ({ name, username, id }) => {
       <img src="/img/doctor.jpg" alt={name} className="card-img" />
       <h3>{name}</h3>
       <p>{username}</p>
-      <Link to={`/dentist/${id}`}>See details</Link>
-      <button onClick={addFav} className="favButton">Add fav</button>
+      <Link to={`/dentist/${id}`}>Ver detalles</Link>
+      <button onClick={addFav} className="favButton">Agregar a Favoritos</button>
     </div>
   );
 };

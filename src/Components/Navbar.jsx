@@ -14,15 +14,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${state.theme}`}>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/favs">Favs</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-      <button onClick={toggleTheme}>
-        {state.theme === "light" ? "🌙 Dark" : "☀️ Light"}
-      </button>
+    <nav className={state.theme}>
+      <Link to="/">Home</Link>
+      <Link to="/favs">Favs</Link>
+      <Link to="/contact">Contact</Link>
+      <button onClick={toggleTheme}>Change theme</button>
     </nav>
   );
 };

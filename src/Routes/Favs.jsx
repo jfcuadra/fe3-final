@@ -12,7 +12,7 @@ const Favs = () => {
 
   return (
     <div>
-      <h1>Dentists Favs</h1>
+      <h1>Dentistas Favoritos</h1>
       <div className="card-grid">
         {favs.map((fav) => (
           <Card key={fav.id} name={fav.name} username={fav.username} id={fav.id} />
