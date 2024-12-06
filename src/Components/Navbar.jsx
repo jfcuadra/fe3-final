@@ -7,15 +7,22 @@ const Navbar = () => {
   const { state, dispatch } = useContext(ContextGlobal);
 
   const toggleTheme = () => {
-    dispatch({ type: "SET_THEME", payload: state.theme === "light" ? "dark" : "light" });
+    dispatch({
+      type: "SET_THEME",
+      payload: state.theme === "light" ? "dark" : "light",
+    });
   };
 
   return (
-    <nav className={state.theme}>
-      <Link to="/">Home</Link>
-      <Link to="/favs">Favs</Link>
-      <Link to="/contact">Contact</Link>
-      <button onClick={toggleTheme}>Change theme</button>
+    <nav className={`navbar ${state.theme}`}>
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/favs">Favs</Link>
+        <Link to="/contact">Contact</Link>
+      </div>
+      <button onClick={toggleTheme}>
+        {state.theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      </button>
     </nav>
   );
 };

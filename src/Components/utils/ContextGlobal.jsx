@@ -1,13 +1,13 @@
 // src/Components/utils/ContextGlobal.jsx
 import { createContext, useReducer } from "react";
 
+// Estado inicial del contexto
 export const initialState = {
   theme: "light", // Tema inicial
   data: [], // Datos de la API
 };
 
-export const ContextGlobal = createContext();
-
+// Reducer para manejar las acciones del contexto
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_THEME":
@@ -19,6 +19,10 @@ const reducer = (state, action) => {
   }
 };
 
+// Creación del contexto
+export const ContextGlobal = createContext();
+
+// Proveedor del contexto
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
